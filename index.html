@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NSYNK Office · Pannellum</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="vendor/pannellum.css">
+<script src="vendor/pannellum.js"></script>
+<style>
+  html, body { margin: 0; height: 100%; background: #111; }
+  #pano { width: 100%; height: 100%; }
+
+  /* Scene hotspots: tour.json gives each one  "cssClass": "spot"  */
+  .pnlm-hotspot-base.spot {
+    width: 46px; height: 46px;
+    background: url(assets/spot.svg) center / contain no-repeat;
+    filter: drop-shadow(0 1px 3px rgb(0 0 0 / .5));
+    opacity: .85; cursor: pointer; transition: opacity .15s;
+  }
+  .pnlm-hotspot-base.spot:hover { opacity: 1; }
+  .pnlm-tooltip span { font: 500 13px/1.3 system-ui, sans-serif; background: rgb(18 18 20 / .85); border-radius: 6px; }
+</style>
+</head>
+<body>
+<div id="pano"></div>
+<script>
+  // The whole tour (scenes, hotspots, transitions) is Pannellum's own JSON format.
+  fetch('tour.json')
+    .then(response => response.json())
+    .then(config => pannellum.viewer('pano', config))
+    .catch(error => { document.getElementById('pano').textContent = 'Could not load tour.json: ' + error.message; });
+</script>
+</body>
+</html>

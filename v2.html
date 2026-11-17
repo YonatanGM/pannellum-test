@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NSYNK Office · Pannellum v2</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="vendor/pannellum.css">
+<script src="vendor/pannellum.js"></script>
+<style>
+  html, body { margin: 0; height: 100%; background: #111; }
+  #pano { width: 100%; height: 100%; }
+
+  /* hotspot looks, chosen by each hotspot's "cssClass" */
+  .pnlm-hotspot-base.spot { width: 46px; height: 46px; background: url(assets/spot.svg) center / contain no-repeat;
+    filter: drop-shadow(0 1px 3px rgb(0 0 0 / .5)); opacity: .85; cursor: pointer; transition: opacity .15s; }
+  .pnlm-hotspot-base.spot:hover { opacity: 1; }
+  .pnlm-hotspot-base.info-spot { width: 34px; height: 34px; background: url(assets/info.svg) center / contain no-repeat;
+    filter: drop-shadow(0 1px 3px rgb(0 0 0 / .5)); }
+  .pnlm-tooltip span { font: 500 13px/1.3 system-ui, sans-serif; background: rgb(18 18 20 / .85); border-radius: 6px; }
+  .pnlm-tooltip span img, .pnlm-tooltip span video { display: block; border-radius: 4px; }
+  /* Pannellum sizes a tooltip before its image/video has loaded: anchor those with CSS instead */
+  .pnlm-tooltip span:has(img), .pnlm-tooltip span:has(video) { width: 320px !important; max-width: 340px !important; white-space: normal;
+    left: 50%; bottom: calc(100% + 10px); top: auto; margin: 0 !important; transform: translateX(-50%); }
+
+  /* createTooltipFunc: Pannellum calls our function with the hotspot's element, we build the tooltip */
+  .thumb-tip { position: absolute; bottom: 52px; left: 50%; transform: translateX(-50%); visibility: hidden; pointer-events: none;
+               font: 500 12px/1.3 system-ui, sans-serif; color: #fff; background: rgb(18 18 20 / .9); border-radius: 8px; padding: 6px; text-align: center; }
+  .thumb-tip img { display: block; width: 200px; height: 100px; object-fit: cover; border-radius: 5px; margin-bottom: 5px; }
+  .pnlm-hotspot-base:hover .thumb-tip { visibility: visible; }
+
+  .lil-gui.root { --width: 310px; --name-width: 52%; position: fixed; top: 0; right: 0; max-height: 100vh; overflow: auto; z-index: 1000; }
+  .log { margin: 0; padding: 6px 8px; max-height: 160px; overflow: auto; white-space: pre-wrap; font: 11px/1.4 ui-monospace, Consolas, monospace; color: #cfc9da; }
+  .log:empty::before { content: 'Events appear here. Click the photo to read yaw/pitch.'; color: #8f899b; }
+</style>
+</head>
+<body>
+<div id="pano"></div>
+<script type="module">
+import GUI from './vendor/lil-gui/lil-gui.esm.js';
+
+const tour = await fetch('tour-v2.json').then(r => r.json());
+
+// =====================================================================================
+// Every switch with its default. Names are the Pannellum config key or API call they set.
+// =====================================================================================
+const D = {
+  image: '4k', autoLoad: true, titleBox: true, strings: 'en',
+  look: 'default', tooltip: 'text', info: true, infoMedia: true, hotSpotDebug: false, addOnClick: false,
+  sceneFadeDuration: 800, arrive: 'travel', targetHfov: 0,
+  hfov: 100, minHfov: 50, maxHfov: 120, minPitch: -57, horizonPitch: 0, horizonRoll: 0, avoidShowingBackground: false, compass: false,
+  mouseZoom: 'true', keyboardZoom: true, doubleClickZoom: true, draggable: true, disableKeyboardCtrl: false, friction: 0.15,
+  showControls: true, showZoomCtrl: true, showFullscreenCtrl: true, orientationOnByDefault: false,
+  autoRotate: 0, autoRotateInactivityDelay: 3, autoRotateStopDelay: 0,
+};
+const S = structuredClone(D);
+for (const [k, raw] of new URLSearchParams(location.search)) {
+  if (!(k in D)) continue;
+  S[k] = typeof D[k] === 'boolean' ? raw === '1' : typeof D[k] === 'number' ? Number(raw) : raw;
+}
+function saveUrl() {
+  const q = new URLSearchParams();
+  for (const k in D) if (S[k] !== D[k]) q.set(k, typeof D[k] === 'boolean' ? (S[k] ? '1' : '0') : S[k]);
+  history.replaceState(null, '', q.size ? '?' + q : location.pathname);
+}
+
+const STRINGS_DE = {
+  loadButtonLabel: 'Klicken, um das<br>Panorama zu laden', loadingLabel: 'Lädt…', bylineLabel: 'von %s',
+  noPanoramaError: 'Kein Panorama angegeben.', fileAccessError: 'Die Datei %s konnte nicht geladen werden.',
+  malformedURLError: 'Die Adresse des Panoramas ist fehlerhaft.', iOS8WebGLError: 'Wegen eines Fehlers in iOS 8 funktioniert WebGL hier nicht.',
+  genericWebGLError: 'Dieser Browser unterstützt kein WebGL.', textureSizeError: 'Das Panorama ist zu groß für dieses Gerät (%spx breit, höchstens %spx).',
+  unknownError: 'Unbekannter Fehler. Bitte die Konsole prüfen.',
+};
+
+// createTooltipFunc(hotSpotDiv, createTooltipArgs): an API-only hotspot option
+function thumbnailTooltip(div, args) {
+  const tip = document.createElement('div');
+  tip.className = 'thumb-tip';
+  tip.innerHTML = `<img src="assets/thumbs/${args.sceneId}.jpg" alt="">${args.title}`;
+  div.appendChild(tip);
+}
+
+// =====================================================================================
+// Pannellum's config is one object: the switches edit a copy before pannellum.viewer() gets it.
+// =====================================================================================
+function makeConfig(keep) {
+  const cfg = structuredClone(tour);
+  const d = cfg.default;
+  Object.assign(d, {
+    autoLoad: S.autoLoad, preview: 'assets/preview.jpg', sceneFadeDuration: S.sceneFadeDuration,
+    hfov: S.hfov, minHfov: S.minHfov, maxHfov: S.maxHfov, minPitch: S.minPitch,
+    horizonPitch: S.horizonPitch, horizonRoll: S.horizonRoll, avoidShowingBackground: S.avoidShowingBackground,
+    mouseZoom: S.mouseZoom === 'fullscreenonly' ? 'fullscreenonly' : S.mouseZoom === 'true', keyboardZoom: S.keyboardZoom,
+    doubleClickZoom: S.doubleClickZoom, draggable: S.draggable, disableKeyboardCtrl: S.disableKeyboardCtrl, friction: S.friction,
+    showControls: S.showControls, showZoomCtrl: S.showZoomCtrl, showFullscreenCtrl: S.showFullscreenCtrl, compass: S.compass,
+    autoRotate: S.autoRotate || false, autoRotateInactivityDelay: S.autoRotate ? S.autoRotateInactivityDelay * 1000 : -1,
+    orientationOnByDefault: S.orientationOnByDefault, hotSpotDebug: S.hotSpotDebug,
+  });
+  if (S.autoRotateStopDelay) d.autoRotateStopDelay = S.autoRotateStopDelay * 1000;
+  if (S.strings === 'de') d.strings = STRINGS_DE;
+  if (S.minPitch <= -90) delete d.minPitch;
+  if (keep) d.firstScene = keep.scene;
+
+  for (const [id, scene] of Object.entries(cfg.scenes)) {
+    if (S.image === 'multires' || S.image === 'debug') {
+      scene.type = 'multires'; delete scene.panorama;
+      if (S.image === 'debug') scene.multiRes = { ...scene.multiRes, basePath: 'multires-debug' };   // numbered tiles, same layout (tools/make_debug_tiles.py)
+    }
+    else { delete scene.multiRes; if (S.image === '4k') scene.panorama = `panos-4k/${id}.jpg`; }
+    if (!S.titleBox) delete scene.title;
+    if (keep?.scene === id) Object.assign(scene, { yaw: keep.yaw, pitch: keep.pitch, hfov: keep.hfov });
+
+    scene.hotSpots = scene.hotSpots.filter(h => h.type === 'scene' || S.info);
+    for (const h of scene.hotSpots) {
+      if (h.type === 'info') {
+        if (!S.infoMedia) { delete h.image; delete h.video; delete h.width; }
+        continue;
+      }
+      if (S.look === 'default') delete h.cssClass;
+      if (S.arrive === 'same') h.targetYaw = 'sameAzimuth';
+      if (S.arrive === 'scene') { delete h.targetYaw; delete h.targetPitch; }
+      if (S.targetHfov) h.targetHfov = S.targetHfov;
+      if (S.tooltip === 'none') {
+        h.createTooltipFunc = () => {};                            // replaces Pannellum's tooltip with nothing
+        h.cssClass ??= 'pnlm-hotspot pnlm-sprite pnlm-scene';
+      }
+      if (S.tooltip === 'thumbnail') {
+        h.createTooltipFunc = thumbnailTooltip;
+        h.createTooltipArgs = { sceneId: h.sceneId, title: h.text };
+        h.cssClass ??= 'pnlm-hotspot pnlm-sprite pnlm-scene';   // a custom tooltip also replaces the default classes
+      }
+    }
+  }
+  return cfg;
+}
+
+let viewer;
+function build() {
+  const keep = viewer?.getScene() ? { scene: viewer.getScene(), yaw: viewer.getYaw(), pitch: viewer.getPitch(), hfov: viewer.getHfov() } : null;
+  viewer?.destroy();
+  viewer = pannellum.viewer('pano', makeConfig(keep));
+  window.viewer = viewer;
+  for (const ev of ['load', 'scenechange', 'scenechangefadedone', 'animatefinished', 'fullscreenchange', 'error', 'errorcleared'])
+    viewer.on(ev, arg => log(ev + (arg === undefined ? '' : ' ' + (typeof arg === 'object' ? JSON.stringify(arg) : arg))));
+  let lastHfov;
+  viewer.on('zoomchange', hfov => { if (Math.round(hfov) !== lastHfov) log('zoomchange ' + (lastHfov = Math.round(hfov)) + '°'); });
+  viewer.on('mousedown', e => {
+    const [pitch, yaw] = viewer.mouseEventToCoords(e);
+    log(`click  yaw ${yaw.toFixed(1)}°  pitch ${pitch.toFixed(1)}°`);
+    if (S.addOnClick) {
+      const id = 'added-' + Date.now();
+      viewer.addHotSpot({ id, type: 'info', yaw, pitch, text: `addHotSpot() at ${yaw.toFixed(1)}° / ${pitch.toFixed(1)}°`, cssClass: 'info-spot' });
+      log(`addHotSpot ${id}`);
+    }
+  });
+}
+
+const logEl = Object.assign(document.createElement('pre'), { className: 'log' });
+const lines = [];
+function log(t) { lines.unshift(t); lines.length = Math.min(lines.length, 40); logEl.textContent = lines.join('\n'); }
+
+// =====================================================================================
+// Panel: Pannellum reads its config once, so most switches rebuild the viewer in place
+// (same scene and view); a few go through the API live.
+// =====================================================================================
+const LIVE = {
+  hfov: () => viewer.setHfov(S.hfov),
+  minPitch: () => viewer.setPitchBounds([S.minPitch, 90]),
+  horizonPitch: () => viewer.setHorizonPitch(S.horizonPitch),
+  horizonRoll: () => viewer.setHorizonRoll(S.horizonRoll),
+  addOnClick: () => {},
+};
+function change(key) { saveUrl(); (LIVE[key] ?? build)(); }
+
+const gui = new GUI({ title: 'Options' });
+gui.close();
+const add = (f, key, label, ...args) => f.add(S, key, ...args).name(label).onFinishChange(() => change(key));
+
+let f = gui.addFolder('Panorama').close();
+add(f, 'image', 'type / panorama', { 'equirectangular 4K': '4k', 'equirectangular 8K': '8k', 'multires (cube tiles to 16K)': 'multires', 'multires: numbered debug tiles': 'debug' });
+add(f, 'autoLoad', 'autoLoad (off: preview + button)');
+add(f, 'titleBox', 'title box');
+add(f, 'strings', 'strings', { English: 'en', Deutsch: 'de' });
+
+f = gui.addFolder('Hotspots').close();
+add(f, 'look', 'scene hotspots · cssClass', { 'Pannellum default icon': 'default', 'image: floor ring': 'spot' });
+add(f, 'tooltip', 'link hover (tooltip)', { 'label only · text': 'text', 'image + label · createTooltipFunc': 'thumbnail', 'none · createTooltipFunc that adds nothing': 'none' });
+add(f, 'info', 'info hotspots · type "info"');
+add(f, 'infoMedia', 'image / video in the tooltip');
+add(f, 'hotSpotDebug', 'hotSpotDebug');
+add(f, 'addOnClick', 'addHotSpot() where I click');
+
+f = gui.addFolder('Moving between scenes').close();
+add(f, 'sceneFadeDuration', 'sceneFadeDuration ms', 0, 3000, 100);
+add(f, 'arrive', 'facing on arrival', { 'targetYaw: direction of travel': 'travel', 'targetYaw: "sameAzimuth"': 'same', "the scene's own yaw": 'scene' });
+add(f, 'targetHfov', 'targetHfov (0 = keep)', 0, 120, 5);
+
+f = gui.addFolder('View').close();
+add(f, 'hfov', 'hfov', 50, 120, 1); add(f, 'minHfov', 'minHfov', 20, 90, 1); add(f, 'maxHfov', 'maxHfov', 90, 140, 1);
+add(f, 'minPitch', 'minPitch (-90 = no limit)', -90, -30, 1);
+add(f, 'horizonPitch', 'horizonPitch', -10, 10, 0.5); add(f, 'horizonRoll', 'horizonRoll', -10, 10, 0.5);
+add(f, 'avoidShowingBackground', 'avoidShowingBackground');
+add(f, 'compass', 'compass (northOffset = true north)');
+
+f = gui.addFolder('Controls').close();
+add(f, 'mouseZoom', 'mouseZoom', ['true', 'false', 'fullscreenonly']);
+add(f, 'keyboardZoom', 'keyboardZoom'); add(f, 'doubleClickZoom', 'doubleClickZoom'); add(f, 'draggable', 'draggable');
+add(f, 'disableKeyboardCtrl', 'disableKeyboardCtrl'); add(f, 'friction', 'friction', 0.01, 1, 0.01);
+add(f, 'showControls', 'showControls'); add(f, 'showZoomCtrl', 'showZoomCtrl'); add(f, 'showFullscreenCtrl', 'showFullscreenCtrl');
+add(f, 'orientationOnByDefault', 'orientationOnByDefault (phones)');
+
+f = gui.addFolder('Auto-rotate').close();
+add(f, 'autoRotate', 'autoRotate °/s (0 = off)', -10, 10, 0.5);
+add(f, 'autoRotateInactivityDelay', 'autoRotateInactivityDelay s', 1, 20, 1);
+add(f, 'autoRotateStopDelay', 'autoRotateStopDelay s (0 = never)', 0, 60, 1);
+
+f = gui.addFolder('API').close();
+const api = {
+  foldingWall: () => viewer.loadScene('east-side-04', 4, -150, 70),
+  monitor: () => viewer.getScene() === 'east-side-04' ? viewer.lookAt(-16, 43.7, 60, 1500) : viewer.loadScene('east-side-04', -16, 43.7, 60),
+  start: () => viewer.startAutoRotate(-3), stop: () => viewer.stopAutoRotate(),
+  fullscreen: () => viewer.toggleFullscreen(),
+  config: () => { const c = viewer.getConfig(); log(`getConfig: ${viewer.getScene()}, ${c.hotSpots.length} hotspots, hfov ${Math.round(viewer.getHfov())}°, northOffset ${c.northOffset}°`); },
+  removeAdded: () => { for (const h of viewer.getConfig().hotSpots.filter(h => String(h.id).startsWith('added-'))) viewer.removeHotSpot(h.id); },
+};
+f.add(api, 'foldingWall').name('loadScene(id, pitch, yaw, hfov)');
+f.add(api, 'monitor').name('lookAt(pitch, yaw, hfov, ms)');
+f.add(api, 'start').name('startAutoRotate(-3)'); f.add(api, 'stop').name('stopAutoRotate()');
+f.add(api, 'fullscreen').name('toggleFullscreen()');
+f.add(api, 'config').name('getConfig()');
+f.add(api, 'removeAdded').name('removeHotSpot(added ones)');
+
+f = gui.addFolder('Log');
+f.$children.append(logEl);
+gui.add({ reset: () => { location.href = location.pathname; } }, 'reset').name('Reset all options');
+
+build();
+</script>
+</body>
+</html>

@@ -1,0 +1,1752 @@
+{
+ "default": {
+  "firstScene": "east-side-04",
+  "autoLoad": true,
+  "sceneFadeDuration": 800,
+  "minPitch": -57
+ },
+ "scenes": {
+  "east-side-01": {
+   "title": "East Side 01",
+   "panorama": "panos/east-side-01.jpg",
+   "hotSpots": [
+    {
+     "type": "scene",
+     "sceneId": "east-side-02",
+     "text": "East Side 02",
+     "yaw": -81.4,
+     "pitch": -25.8,
+     "targetYaw": -86.6,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "east-side-03",
+     "text": "East Side 03",
+     "yaw": 153.3,
+     "pitch": -30.0,
+     "targetYaw": 156.6,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "east-side-04",
+     "text": "East Side 04",
+     "yaw": 84.1,
+     "pitch": -21.0,
+     "targetYaw": 108.9,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "east-side-05",
+     "text": "East Side 05",
+     "yaw": 49.7,
+     "pitch": -13.6,
+     "targetYaw": 111.9,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "east-side-08",
+     "text": "East Side 08",
+     "yaw": 8.2,
+     "pitch": -20.6,
+     "targetYaw": 74.0,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    }
+   ],
+   "northOffset": 301.4,
+   "multiRes": {
+    "path": "/%l/%s%y_%x",
+    "extension": "jpg",
+    "tileResolution": 512,
+    "maxLevel": 5,
+    "cubeResolution": 5208,
+    "basePath": "multires/east-side-01"
+   }
+  },
+  "east-side-02": {
+   "title": "East Side 02",
+   "panorama": "panos/east-side-02.jpg",
+   "hotSpots": [
+    {
+     "type": "scene",
+     "sceneId": "east-side-01",
+     "text": "East Side 01",
+     "yaw": 93.4,
+     "pitch": -25.8,
+     "targetYaw": 98.6,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "east-side-03",
+     "text": "East Side 03",
+     "yaw": 118.1,
+     "pitch": -16.5,
+     "targetYaw": 126.5,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "east-side-08",
+     "text": "East Side 08",
+     "yaw": 41.0,
+     "pitch": -16.5,
+     "targetYaw": 112.0,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    }
+   ],
+   "northOffset": 306.6,
+   "multiRes": {
+    "path": "/%l/%s%y_%x",
+    "extension": "jpg",
+    "tileResolution": 512,
+    "maxLevel": 5,
+    "cubeResolution": 5208,
+    "basePath": "multires/east-side-02"
+   }
+  },
+  "east-side-03": {
+   "title": "East Side 03",
+   "panorama": "panos/east-side-03.jpg",
+   "hotSpots": [
+    {
+     "type": "scene",
+     "sceneId": "east-side-01",
+     "text": "East Side 01",
+     "yaw": -23.4,
+     "pitch": -30.0,
+     "targetYaw": -26.7,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "east-side-02",
+     "text": "East Side 02",
+     "yaw": -53.5,
+     "pitch": -16.5,
+     "targetYaw": -61.9,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "east-side-04",
+     "text": "East Side 04",
+     "yaw": 48.2,
+     "pitch": -21.3,
+     "targetYaw": 69.7,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    }
+   ],
+   "northOffset": 298.2,
+   "multiRes": {
+    "path": "/%l/%s%y_%x",
+    "extension": "jpg",
+    "tileResolution": 512,
+    "maxLevel": 5,
+    "cubeResolution": 5208,
+    "basePath": "multires/east-side-03"
+   }
+  },
+  "east-side-04": {
+   "title": "East Side 04",
+   "panorama": "panos/east-side-04.jpg",
+   "yaw": 75.4,
+   "hotSpots": [
+    {
+     "type": "scene",
+     "sceneId": "east-side-01",
+     "text": "East Side 01",
+     "yaw": -71.1,
+     "pitch": -21.0,
+     "targetYaw": -95.9,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "east-side-03",
+     "text": "East Side 03",
+     "yaw": -110.3,
+     "pitch": -21.3,
+     "targetYaw": -131.8,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "east-side-05",
+     "text": "East Side 05",
+     "yaw": 38.2,
+     "pitch": -22.0,
+     "targetYaw": 75.5,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "east-side-06",
+     "text": "East Side 06",
+     "yaw": 80.3,
+     "pitch": -17.6,
+     "targetYaw": 111.5,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "east-side-08",
+     "text": "East Side 08",
+     "yaw": -18.1,
+     "pitch": -17.2,
+     "targetYaw": 22.9,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "info",
+     "id": "monitor",
+     "yaw": 43.7,
+     "pitch": -16.1,
+     "text": "Monitor",
+     "cssClass": "info-spot",
+     "video": "assets/clip.mp4",
+     "width": 320
+    },
+    {
+     "type": "info",
+     "id": "poster-plan",
+     "yaw": 114.3,
+     "pitch": -3.3,
+     "text": "Poster",
+     "cssClass": "info-spot",
+     "image": "assets/plan-2021.jpg",
+     "width": 320
+    },
+    {
+     "type": "info",
+     "id": "folding-wall-pin",
+     "yaw": -150.0,
+     "pitch": 4.0,
+     "text": "Folding wall",
+     "cssClass": "info-spot",
+     "image": "assets/plan-studio-2019.jpg",
+     "width": 320
+    }
+   ],
+   "pitch": -6,
+   "northOffset": 276.6,
+   "multiRes": {
+    "path": "/%l/%s%y_%x",
+    "extension": "jpg",
+    "tileResolution": 512,
+    "maxLevel": 5,
+    "cubeResolution": 5208,
+    "basePath": "multires/east-side-04"
+   }
+  },
+  "east-side-05": {
+   "title": "East Side 05",
+   "panorama": "panos/east-side-05.jpg",
+   "hotSpots": [
+    {
+     "type": "scene",
+     "sceneId": "east-side-01",
+     "text": "East Side 01",
+     "yaw": -68.1,
+     "pitch": -13.6,
+     "targetYaw": -130.3,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "east-side-04",
+     "text": "East Side 04",
+     "yaw": -104.5,
+     "pitch": -22.0,
+     "targetYaw": -141.8,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "east-side-06",
+     "text": "East Side 06",
+     "yaw": 169.1,
+     "pitch": -25.2,
+     "targetYaw": 163.0,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "east-side-07",
+     "text": "East Side 07",
+     "yaw": 54.0,
+     "pitch": -24.3,
+     "targetYaw": 40.9,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "east-side-08",
+     "text": "East Side 08",
+     "yaw": -28.6,
+     "pitch": -19.8,
+     "targetYaw": -25.0,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    }
+   ],
+   "northOffset": 239.3,
+   "multiRes": {
+    "path": "/%l/%s%y_%x",
+    "extension": "jpg",
+    "tileResolution": 512,
+    "maxLevel": 5,
+    "cubeResolution": 5208,
+    "basePath": "multires/east-side-05"
+   }
+  },
+  "east-side-06": {
+   "title": "East Side 06",
+   "panorama": "panos/east-side-06.jpg",
+   "hotSpots": [
+    {
+     "type": "scene",
+     "sceneId": "east-side-04",
+     "text": "East Side 04",
+     "yaw": -68.5,
+     "pitch": -17.6,
+     "targetYaw": -99.7,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "east-side-05",
+     "text": "East Side 05",
+     "yaw": -17.0,
+     "pitch": -25.2,
+     "targetYaw": -10.9,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "east-side-07",
+     "text": "East Side 07",
+     "yaw": 16.2,
+     "pitch": -15.3,
+     "targetYaw": 9.3,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    }
+   ],
+   "northOffset": 245.4,
+   "multiRes": {
+    "path": "/%l/%s%y_%x",
+    "extension": "jpg",
+    "tileResolution": 512,
+    "maxLevel": 5,
+    "cubeResolution": 5208,
+    "basePath": "multires/east-side-06"
+   }
+  },
+  "east-side-07": {
+   "title": "East Side 07",
+   "panorama": "panos/east-side-07.jpg",
+   "hotSpots": [
+    {
+     "type": "scene",
+     "sceneId": "east-side-05",
+     "text": "East Side 05",
+     "yaw": -139.1,
+     "pitch": -24.3,
+     "targetYaw": -126.0,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "east-side-06",
+     "text": "East Side 06",
+     "yaw": -170.7,
+     "pitch": -15.3,
+     "targetYaw": -163.8,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "east-side-08",
+     "text": "East Side 08",
+     "yaw": -83.0,
+     "pitch": -16.8,
+     "targetYaw": -66.3,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    }
+   ],
+   "northOffset": 252.3,
+   "multiRes": {
+    "path": "/%l/%s%y_%x",
+    "extension": "jpg",
+    "tileResolution": 512,
+    "maxLevel": 5,
+    "cubeResolution": 5208,
+    "basePath": "multires/east-side-07"
+   }
+  },
+  "east-side-08": {
+   "title": "East Side 08",
+   "panorama": "panos/east-side-08.jpg",
+   "hotSpots": [
+    {
+     "type": "scene",
+     "sceneId": "east-side-01",
+     "text": "East Side 01",
+     "yaw": -106.0,
+     "pitch": -20.6,
+     "targetYaw": -171.8,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "east-side-02",
+     "text": "East Side 02",
+     "yaw": -68.0,
+     "pitch": -16.5,
+     "targetYaw": -139.0,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "east-side-04",
+     "text": "East Side 04",
+     "yaw": -157.1,
+     "pitch": -17.2,
+     "targetYaw": 161.9,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "east-side-05",
+     "text": "East Side 05",
+     "yaw": 155.0,
+     "pitch": -19.8,
+     "targetYaw": 151.4,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "east-side-07",
+     "text": "East Side 07",
+     "yaw": 113.7,
+     "pitch": -16.8,
+     "targetYaw": 97.0,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "east-side-09",
+     "text": "East Side 09",
+     "yaw": 24.3,
+     "pitch": -30.0,
+     "targetYaw": 21.7,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "info",
+     "id": "folding-wall",
+     "yaw": -42.5,
+     "pitch": -3.5,
+     "text": "Folding wall",
+     "cssClass": "info-spot",
+     "image": "assets/plan-studio-2019.jpg",
+     "width": 320
+    }
+   ],
+   "northOffset": 235.7,
+   "multiRes": {
+    "path": "/%l/%s%y_%x",
+    "extension": "jpg",
+    "tileResolution": 512,
+    "maxLevel": 5,
+    "cubeResolution": 5208,
+    "basePath": "multires/east-side-08"
+   }
+  },
+  "east-side-09": {
+   "title": "East Side 09",
+   "panorama": "panos/east-side-09.jpg",
+   "hotSpots": [
+    {
+     "type": "scene",
+     "sceneId": "east-side-08",
+     "text": "East Side 08",
+     "yaw": -158.3,
+     "pitch": -30.0,
+     "targetYaw": -155.7,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "east-side-10",
+     "text": "East Side 10",
+     "yaw": 102.1,
+     "pitch": -15.7,
+     "targetYaw": -93.1,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "east-side-11",
+     "text": "East Side 11",
+     "yaw": 20.1,
+     "pitch": -32.8,
+     "targetYaw": -75.8,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "storage-01",
+     "text": "Storage 01",
+     "yaw": -71.3,
+     "pitch": -22.1,
+     "targetYaw": -46.1,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    }
+   ],
+   "northOffset": 238.3,
+   "multiRes": {
+    "path": "/%l/%s%y_%x",
+    "extension": "jpg",
+    "tileResolution": 512,
+    "maxLevel": 5,
+    "cubeResolution": 5208,
+    "basePath": "multires/east-side-09"
+   }
+  },
+  "east-side-10": {
+   "title": "East Side 10",
+   "panorama": "panos/east-side-10.jpg",
+   "hotSpots": [
+    {
+     "type": "scene",
+     "sceneId": "east-side-09",
+     "text": "East Side 09",
+     "yaw": 86.9,
+     "pitch": -15.7,
+     "targetYaw": -77.9,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    }
+   ],
+   "northOffset": 73.5,
+   "multiRes": {
+    "path": "/%l/%s%y_%x",
+    "extension": "jpg",
+    "tileResolution": 512,
+    "maxLevel": 5,
+    "cubeResolution": 5208,
+    "basePath": "multires/east-side-10"
+   }
+  },
+  "east-side-11": {
+   "title": "East Side 11",
+   "panorama": "panos/east-side-11.jpg",
+   "hotSpots": [
+    {
+     "type": "scene",
+     "sceneId": "east-side-09",
+     "text": "East Side 09",
+     "yaw": 104.2,
+     "pitch": -32.8,
+     "targetYaw": -159.9,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "east-side-12",
+     "text": "East Side 12",
+     "yaw": -157.9,
+     "pitch": -34.2,
+     "targetYaw": -165.5,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "east-side-13",
+     "text": "East Side 13",
+     "yaw": 12.2,
+     "pitch": -23.0,
+     "targetYaw": -171.7,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "hallway-02",
+     "text": "Hallway 02",
+     "yaw": -71.3,
+     "pitch": -24.4,
+     "targetYaw": -67.5,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    }
+   ],
+   "northOffset": 334.1,
+   "multiRes": {
+    "path": "/%l/%s%y_%x",
+    "extension": "jpg",
+    "tileResolution": 512,
+    "maxLevel": 5,
+    "cubeResolution": 5208,
+    "basePath": "multires/east-side-11"
+   }
+  },
+  "east-side-12": {
+   "title": "East Side 12",
+   "panorama": "panos/east-side-12.jpg",
+   "hotSpots": [
+    {
+     "type": "scene",
+     "sceneId": "east-side-11",
+     "text": "East Side 11",
+     "yaw": 14.5,
+     "pitch": -34.2,
+     "targetYaw": 22.1,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    }
+   ],
+   "northOffset": 341.8,
+   "multiRes": {
+    "path": "/%l/%s%y_%x",
+    "extension": "jpg",
+    "tileResolution": 512,
+    "maxLevel": 5,
+    "cubeResolution": 5208,
+    "basePath": "multires/east-side-12"
+   }
+  },
+  "east-side-13": {
+   "title": "East Side 13",
+   "panorama": "panos/east-side-13.jpg",
+   "hotSpots": [
+    {
+     "type": "scene",
+     "sceneId": "east-side-11",
+     "text": "East Side 11",
+     "yaw": 8.3,
+     "pitch": -23.0,
+     "targetYaw": -167.8,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "east-side-14",
+     "text": "East Side 14",
+     "yaw": 62.9,
+     "pitch": -34.1,
+     "targetYaw": 153.8,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "info",
+     "id": "tv",
+     "yaw": -88.5,
+     "pitch": -15.8,
+     "text": "TV",
+     "cssClass": "info-spot",
+     "video": "assets/clip.mp4",
+     "width": 320
+    }
+   ],
+   "northOffset": 158.0,
+   "multiRes": {
+    "path": "/%l/%s%y_%x",
+    "extension": "jpg",
+    "tileResolution": 512,
+    "maxLevel": 5,
+    "cubeResolution": 5208,
+    "basePath": "multires/east-side-13"
+   }
+  },
+  "east-side-14": {
+   "title": "East Side 14",
+   "panorama": "panos/east-side-14.jpg",
+   "hotSpots": [
+    {
+     "type": "scene",
+     "sceneId": "east-side-13",
+     "text": "East Side 13",
+     "yaw": -26.2,
+     "pitch": -34.1,
+     "targetYaw": -117.1,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    }
+   ],
+   "northOffset": 67.2,
+   "multiRes": {
+    "path": "/%l/%s%y_%x",
+    "extension": "jpg",
+    "tileResolution": 512,
+    "maxLevel": 5,
+    "cubeResolution": 5208,
+    "basePath": "multires/east-side-14"
+   }
+  },
+  "hallway-01": {
+   "title": "Hallway 01",
+   "panorama": "panos/hallway-01.jpg",
+   "hotSpots": [
+    {
+     "type": "scene",
+     "sceneId": "hallway-02",
+     "text": "Hallway 02",
+     "yaw": -74.6,
+     "pitch": -24.2,
+     "targetYaw": 105.7,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "hallway-03",
+     "text": "Hallway 03",
+     "yaw": 106.4,
+     "pitch": -26.7,
+     "targetYaw": 149.9,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "kitchen-01",
+     "text": "Kitchen 01",
+     "yaw": 176.2,
+     "pitch": -29.3,
+     "targetYaw": 154.5,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    }
+   ],
+   "northOffset": 150.6,
+   "multiRes": {
+    "path": "/%l/%s%y_%x",
+    "extension": "jpg",
+    "tileResolution": 512,
+    "maxLevel": 5,
+    "cubeResolution": 5208,
+    "basePath": "multires/hallway-01"
+   }
+  },
+  "hallway-02": {
+   "title": "Hallway 02",
+   "panorama": "panos/hallway-02.jpg",
+   "hotSpots": [
+    {
+     "type": "scene",
+     "sceneId": "east-side-11",
+     "text": "East Side 11",
+     "yaw": 112.5,
+     "pitch": -24.4,
+     "targetYaw": 108.7,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "hallway-01",
+     "text": "Hallway 01",
+     "yaw": -74.3,
+     "pitch": -24.2,
+     "targetYaw": 105.4,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    }
+   ],
+   "northOffset": 330.3,
+   "multiRes": {
+    "path": "/%l/%s%y_%x",
+    "extension": "jpg",
+    "tileResolution": 512,
+    "maxLevel": 5,
+    "cubeResolution": 5208,
+    "basePath": "multires/hallway-02"
+   }
+  },
+  "hallway-03": {
+   "title": "Hallway 03",
+   "panorama": "panos/hallway-03.jpg",
+   "hotSpots": [
+    {
+     "type": "scene",
+     "sceneId": "hallway-01",
+     "text": "Hallway 01",
+     "yaw": -30.1,
+     "pitch": -26.7,
+     "targetYaw": -73.6,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "west-side-01",
+     "text": "West Side 01",
+     "yaw": 155.7,
+     "pitch": -28.0,
+     "targetYaw": 70.2,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    }
+   ],
+   "northOffset": 107.2,
+   "multiRes": {
+    "path": "/%l/%s%y_%x",
+    "extension": "jpg",
+    "tileResolution": 512,
+    "maxLevel": 5,
+    "cubeResolution": 5208,
+    "basePath": "multires/hallway-03"
+   }
+  },
+  "kitchen-01": {
+   "title": "Kitchen 01",
+   "panorama": "panos/kitchen-01.jpg",
+   "hotSpots": [
+    {
+     "type": "scene",
+     "sceneId": "hallway-01",
+     "text": "Hallway 01",
+     "yaw": -25.5,
+     "pitch": -29.3,
+     "targetYaw": -3.8,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "kitchen-02",
+     "text": "Kitchen 02",
+     "yaw": -146.9,
+     "pitch": -25.2,
+     "targetYaw": -157.1,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "kitchen-03",
+     "text": "Kitchen 03",
+     "yaw": -87.9,
+     "pitch": -24.1,
+     "targetYaw": -73.9,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    }
+   ],
+   "northOffset": 172.3,
+   "multiRes": {
+    "path": "/%l/%s%y_%x",
+    "extension": "jpg",
+    "tileResolution": 512,
+    "maxLevel": 5,
+    "cubeResolution": 5208,
+    "basePath": "multires/kitchen-01"
+   }
+  },
+  "kitchen-02": {
+   "title": "Kitchen 02",
+   "panorama": "panos/kitchen-02.jpg",
+   "hotSpots": [
+    {
+     "type": "scene",
+     "sceneId": "kitchen-01",
+     "text": "Kitchen 01",
+     "yaw": 22.9,
+     "pitch": -25.2,
+     "targetYaw": 33.1,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    }
+   ],
+   "northOffset": 182.5,
+   "multiRes": {
+    "path": "/%l/%s%y_%x",
+    "extension": "jpg",
+    "tileResolution": 512,
+    "maxLevel": 5,
+    "cubeResolution": 5208,
+    "basePath": "multires/kitchen-02"
+   }
+  },
+  "kitchen-03": {
+   "title": "Kitchen 03",
+   "panorama": "panos/kitchen-03.jpg",
+   "hotSpots": [
+    {
+     "type": "scene",
+     "sceneId": "kitchen-01",
+     "text": "Kitchen 01",
+     "yaw": 106.1,
+     "pitch": -24.1,
+     "targetYaw": 92.1,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "kitchen-04",
+     "text": "Kitchen 04",
+     "yaw": -143.3,
+     "pitch": -36.8,
+     "targetYaw": 156.6,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    }
+   ],
+   "northOffset": 158.2,
+   "multiRes": {
+    "path": "/%l/%s%y_%x",
+    "extension": "jpg",
+    "tileResolution": 512,
+    "maxLevel": 5,
+    "cubeResolution": 5208,
+    "basePath": "multires/kitchen-03"
+   }
+  },
+  "kitchen-04": {
+   "title": "Kitchen 04",
+   "panorama": "panos/kitchen-04.jpg",
+   "hotSpots": [
+    {
+     "type": "scene",
+     "sceneId": "kitchen-03",
+     "text": "Kitchen 03",
+     "yaw": -23.4,
+     "pitch": -36.8,
+     "targetYaw": 36.7,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    }
+   ],
+   "northOffset": 218.3,
+   "multiRes": {
+    "path": "/%l/%s%y_%x",
+    "extension": "jpg",
+    "tileResolution": 512,
+    "maxLevel": 5,
+    "cubeResolution": 5208,
+    "basePath": "multires/kitchen-04"
+   }
+  },
+  "meeting-room-01": {
+   "title": "Meeting Room 01",
+   "panorama": "panos/meeting-room-01.jpg",
+   "hotSpots": [
+    {
+     "type": "scene",
+     "sceneId": "meeting-room-02",
+     "text": "Meeting Room 02",
+     "yaw": 57.4,
+     "pitch": -27.3,
+     "targetYaw": -15.0,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "meeting-room-03",
+     "text": "Meeting Room 03",
+     "yaw": 134.1,
+     "pitch": -20.4,
+     "targetYaw": -76.5,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "west-side-03",
+     "text": "West Side 03",
+     "yaw": -104.5,
+     "pitch": -28.1,
+     "targetYaw": -13.4,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    }
+   ],
+   "northOffset": 274.8,
+   "multiRes": {
+    "path": "/%l/%s%y_%x",
+    "extension": "jpg",
+    "tileResolution": 512,
+    "maxLevel": 5,
+    "cubeResolution": 5208,
+    "basePath": "multires/meeting-room-01"
+   }
+  },
+  "meeting-room-02": {
+   "title": "Meeting Room 02",
+   "panorama": "panos/meeting-room-02.jpg",
+   "hotSpots": [
+    {
+     "type": "scene",
+     "sceneId": "meeting-room-01",
+     "text": "Meeting Room 01",
+     "yaw": 165.0,
+     "pitch": -27.3,
+     "targetYaw": -122.6,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "meeting-room-03",
+     "text": "Meeting Room 03",
+     "yaw": 101.7,
+     "pitch": -18.8,
+     "targetYaw": -36.6,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    }
+   ],
+   "northOffset": 347.1,
+   "multiRes": {
+    "path": "/%l/%s%y_%x",
+    "extension": "jpg",
+    "tileResolution": 512,
+    "maxLevel": 5,
+    "cubeResolution": 5208,
+    "basePath": "multires/meeting-room-02"
+   }
+  },
+  "meeting-room-03": {
+   "title": "Meeting Room 03",
+   "panorama": "panos/meeting-room-03.jpg",
+   "hotSpots": [
+    {
+     "type": "scene",
+     "sceneId": "meeting-room-01",
+     "text": "Meeting Room 01",
+     "yaw": 103.5,
+     "pitch": -20.4,
+     "targetYaw": -45.9,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "meeting-room-02",
+     "text": "Meeting Room 02",
+     "yaw": 143.4,
+     "pitch": -18.8,
+     "targetYaw": -78.3,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "info",
+     "id": "kitchen-window",
+     "yaw": -27.1,
+     "pitch": -10.6,
+     "text": "Window to the kitchen",
+     "cssClass": "info-spot",
+     "image": "assets/plan-2021.jpg",
+     "width": 320
+    }
+   ],
+   "northOffset": 125.4,
+   "multiRes": {
+    "path": "/%l/%s%y_%x",
+    "extension": "jpg",
+    "tileResolution": 512,
+    "maxLevel": 5,
+    "cubeResolution": 5208,
+    "basePath": "multires/meeting-room-03"
+   }
+  },
+  "sr-16": {
+   "title": "SR 16",
+   "panorama": "panos/sr-16.jpg",
+   "hotSpots": [
+    {
+     "type": "scene",
+     "sceneId": "sr-17",
+     "text": "SR 17",
+     "yaw": 97.5,
+     "pitch": -25.3,
+     "targetYaw": 132.0,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "west-side-05",
+     "text": "West Side 05",
+     "yaw": 150.8,
+     "pitch": -15.8,
+     "targetYaw": 139.0,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "west-side-08",
+     "text": "West Side 08",
+     "yaw": 60.6,
+     "pitch": -15.5,
+     "targetYaw": -88.8,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    }
+   ],
+   "northOffset": 200.8,
+   "multiRes": {
+    "path": "/%l/%s%y_%x",
+    "extension": "jpg",
+    "tileResolution": 512,
+    "maxLevel": 5,
+    "cubeResolution": 5208,
+    "basePath": "multires/sr-16"
+   }
+  },
+  "sr-17": {
+   "title": "SR 17",
+   "panorama": "panos/sr-17.jpg",
+   "hotSpots": [
+    {
+     "type": "scene",
+     "sceneId": "sr-16",
+     "text": "SR 16",
+     "yaw": -48.0,
+     "pitch": -25.3,
+     "targetYaw": -82.5,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "sr-18",
+     "text": "SR 18",
+     "yaw": -177.2,
+     "pitch": -14.7,
+     "targetYaw": 77.0,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "west-side-05",
+     "text": "West Side 05",
+     "yaw": -138.0,
+     "pitch": -19.4,
+     "targetYaw": 175.7,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "west-side-06",
+     "text": "West Side 06",
+     "yaw": 142.1,
+     "pitch": -19.6,
+     "targetYaw": 89.0,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "west-side-08",
+     "text": "West Side 08",
+     "yaw": 61.6,
+     "pitch": -23.5,
+     "targetYaw": -122.3,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    }
+   ],
+   "northOffset": 166.2,
+   "multiRes": {
+    "path": "/%l/%s%y_%x",
+    "extension": "jpg",
+    "tileResolution": 512,
+    "maxLevel": 5,
+    "cubeResolution": 5208,
+    "basePath": "multires/sr-17"
+   }
+  },
+  "sr-18": {
+   "title": "SR 18",
+   "panorama": "panos/sr-18.jpg",
+   "hotSpots": [
+    {
+     "type": "scene",
+     "sceneId": "sr-17",
+     "text": "SR 17",
+     "yaw": -103.0,
+     "pitch": -14.7,
+     "targetYaw": 2.8,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "sr-19",
+     "text": "SR 19",
+     "yaw": 111.6,
+     "pitch": -23.7,
+     "targetYaw": -7.6,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "west-side-05",
+     "text": "West Side 05",
+     "yaw": -151.0,
+     "pitch": -22.5,
+     "targetYaw": -91.6,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "west-side-06",
+     "text": "West Side 06",
+     "yaw": -55.7,
+     "pitch": -21.9,
+     "targetYaw": -3.0,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "west-side-07",
+     "text": "West Side 07",
+     "yaw": 124.1,
+     "pitch": -26.1,
+     "targetYaw": 76.4,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    }
+   ],
+   "northOffset": 272.0,
+   "multiRes": {
+    "path": "/%l/%s%y_%x",
+    "extension": "jpg",
+    "tileResolution": 512,
+    "maxLevel": 5,
+    "cubeResolution": 5208,
+    "basePath": "multires/sr-18"
+   }
+  },
+  "sr-19": {
+   "title": "SR 19",
+   "panorama": "panos/sr-19.jpg",
+   "hotSpots": [
+    {
+     "type": "scene",
+     "sceneId": "sr-18",
+     "text": "SR 18",
+     "yaw": 172.4,
+     "pitch": -23.7,
+     "targetYaw": -68.4,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "west-side-05",
+     "text": "West Side 05",
+     "yaw": 129.7,
+     "pitch": -15.8,
+     "targetYaw": -51.7,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    }
+   ],
+   "northOffset": 31.2,
+   "multiRes": {
+    "path": "/%l/%s%y_%x",
+    "extension": "jpg",
+    "tileResolution": 512,
+    "maxLevel": 5,
+    "cubeResolution": 5208,
+    "basePath": "multires/sr-19"
+   }
+  },
+  "storage-01": {
+   "title": "Storage 01",
+   "panorama": "panos/storage-01.jpg",
+   "hotSpots": [
+    {
+     "type": "scene",
+     "sceneId": "east-side-09",
+     "text": "East Side 09",
+     "yaw": 133.9,
+     "pitch": -22.1,
+     "targetYaw": 108.7,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "storage-02",
+     "text": "Storage 02",
+     "yaw": -9.7,
+     "pitch": -45.5,
+     "targetYaw": 22.5,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    }
+   ],
+   "northOffset": 213.0,
+   "multiRes": {
+    "path": "/%l/%s%y_%x",
+    "extension": "jpg",
+    "tileResolution": 512,
+    "maxLevel": 5,
+    "cubeResolution": 5208,
+    "basePath": "multires/storage-01"
+   }
+  },
+  "storage-02": {
+   "title": "Storage 02",
+   "panorama": "panos/storage-02.jpg",
+   "hotSpots": [
+    {
+     "type": "scene",
+     "sceneId": "storage-01",
+     "text": "Storage 01",
+     "yaw": -157.5,
+     "pitch": -45.5,
+     "targetYaw": 170.3,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    }
+   ],
+   "northOffset": 180.8,
+   "multiRes": {
+    "path": "/%l/%s%y_%x",
+    "extension": "jpg",
+    "tileResolution": 512,
+    "maxLevel": 5,
+    "cubeResolution": 5208,
+    "basePath": "multires/storage-02"
+   }
+  },
+  "west-side-01": {
+   "title": "West Side 01",
+   "panorama": "panos/west-side-01.jpg",
+   "hotSpots": [
+    {
+     "type": "scene",
+     "sceneId": "hallway-03",
+     "text": "Hallway 03",
+     "yaw": -109.8,
+     "pitch": -28.0,
+     "targetYaw": -24.3,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "west-side-02",
+     "text": "West Side 02",
+     "yaw": -25.0,
+     "pitch": -31.3,
+     "targetYaw": -84.8,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "west-side-03",
+     "text": "West Side 03",
+     "yaw": 43.5,
+     "pitch": -42.2,
+     "targetYaw": 52.4,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    }
+   ],
+   "northOffset": 192.6,
+   "multiRes": {
+    "path": "/%l/%s%y_%x",
+    "extension": "jpg",
+    "tileResolution": 512,
+    "maxLevel": 5,
+    "cubeResolution": 5208,
+    "basePath": "multires/west-side-01"
+   }
+  },
+  "west-side-02": {
+   "title": "West Side 02",
+   "panorama": "panos/west-side-02.jpg",
+   "hotSpots": [
+    {
+     "type": "scene",
+     "sceneId": "west-side-01",
+     "text": "West Side 01",
+     "yaw": 95.2,
+     "pitch": -31.3,
+     "targetYaw": 155.0,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    }
+   ],
+   "northOffset": 252.4,
+   "multiRes": {
+    "path": "/%l/%s%y_%x",
+    "extension": "jpg",
+    "tileResolution": 512,
+    "maxLevel": 5,
+    "cubeResolution": 5208,
+    "basePath": "multires/west-side-02"
+   }
+  },
+  "west-side-03": {
+   "title": "West Side 03",
+   "panorama": "panos/west-side-03.jpg",
+   "hotSpots": [
+    {
+     "type": "scene",
+     "sceneId": "meeting-room-01",
+     "text": "Meeting Room 01",
+     "yaw": 166.6,
+     "pitch": -28.1,
+     "targetYaw": 75.5,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "west-side-01",
+     "text": "West Side 01",
+     "yaw": -127.6,
+     "pitch": -42.2,
+     "targetYaw": -136.5,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "west-side-04",
+     "text": "West Side 04",
+     "yaw": 2.2,
+     "pitch": -21.8,
+     "targetYaw": 1.4,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "west-side-05",
+     "text": "West Side 05",
+     "yaw": 89.7,
+     "pitch": -23.7,
+     "targetYaw": 60.7,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "info",
+     "id": "glass-wall",
+     "yaw": 127.4,
+     "pitch": -8.2,
+     "text": "Glass wall",
+     "cssClass": "info-spot",
+     "image": "assets/plan-2021.jpg",
+     "width": 320
+    }
+   ],
+   "northOffset": 183.7,
+   "multiRes": {
+    "path": "/%l/%s%y_%x",
+    "extension": "jpg",
+    "tileResolution": 512,
+    "maxLevel": 5,
+    "cubeResolution": 5208,
+    "basePath": "multires/west-side-03"
+   }
+  },
+  "west-side-04": {
+   "title": "West Side 04",
+   "panorama": "panos/west-side-04.jpg",
+   "hotSpots": [
+    {
+     "type": "scene",
+     "sceneId": "west-side-03",
+     "text": "West Side 03",
+     "yaw": -178.6,
+     "pitch": -21.8,
+     "targetYaw": -177.8,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    }
+   ],
+   "northOffset": 184.5,
+   "multiRes": {
+    "path": "/%l/%s%y_%x",
+    "extension": "jpg",
+    "tileResolution": 512,
+    "maxLevel": 5,
+    "cubeResolution": 5208,
+    "basePath": "multires/west-side-04"
+   }
+  },
+  "west-side-05": {
+   "title": "West Side 05",
+   "panorama": "panos/west-side-05.jpg",
+   "hotSpots": [
+    {
+     "type": "scene",
+     "sceneId": "sr-16",
+     "text": "SR 16",
+     "yaw": -41.0,
+     "pitch": -15.8,
+     "targetYaw": -29.2,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "sr-17",
+     "text": "SR 17",
+     "yaw": -4.3,
+     "pitch": -19.4,
+     "targetYaw": 42.0,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "sr-18",
+     "text": "SR 18",
+     "yaw": 88.4,
+     "pitch": -22.5,
+     "targetYaw": 29.0,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "sr-19",
+     "text": "SR 19",
+     "yaw": 128.3,
+     "pitch": -15.8,
+     "targetYaw": -50.3,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "west-side-03",
+     "text": "West Side 03",
+     "yaw": -119.3,
+     "pitch": -23.7,
+     "targetYaw": -90.3,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "west-side-06",
+     "text": "West Side 06",
+     "yaw": 45.3,
+     "pitch": -15.4,
+     "targetYaw": 38.5,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "west-side-07",
+     "text": "West Side 07",
+     "yaw": 130.7,
+     "pitch": -18.3,
+     "targetYaw": 23.6,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    }
+   ],
+   "northOffset": 212.6,
+   "multiRes": {
+    "path": "/%l/%s%y_%x",
+    "extension": "jpg",
+    "tileResolution": 512,
+    "maxLevel": 5,
+    "cubeResolution": 5208,
+    "basePath": "multires/west-side-05"
+   }
+  },
+  "west-side-06": {
+   "title": "West Side 06",
+   "panorama": "panos/west-side-06.jpg",
+   "hotSpots": [
+    {
+     "type": "scene",
+     "sceneId": "sr-17",
+     "text": "SR 17",
+     "yaw": -91.0,
+     "pitch": -19.6,
+     "targetYaw": -37.9,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "sr-18",
+     "text": "SR 18",
+     "yaw": 177.0,
+     "pitch": -21.9,
+     "targetYaw": 124.3,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "west-side-05",
+     "text": "West Side 05",
+     "yaw": -141.5,
+     "pitch": -15.4,
+     "targetYaw": -134.7,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "west-side-08",
+     "text": "West Side 08",
+     "yaw": -47.9,
+     "pitch": -16.8,
+     "targetYaw": -178.8,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    }
+   ],
+   "northOffset": 219.3,
+   "multiRes": {
+    "path": "/%l/%s%y_%x",
+    "extension": "jpg",
+    "tileResolution": 512,
+    "maxLevel": 5,
+    "cubeResolution": 5208,
+    "basePath": "multires/west-side-06"
+   }
+  },
+  "west-side-07": {
+   "title": "West Side 07",
+   "panorama": "panos/west-side-07.jpg",
+   "hotSpots": [
+    {
+     "type": "scene",
+     "sceneId": "sr-18",
+     "text": "SR 18",
+     "yaw": -103.6,
+     "pitch": -26.1,
+     "targetYaw": -55.9,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "west-side-05",
+     "text": "West Side 05",
+     "yaw": -156.4,
+     "pitch": -18.3,
+     "targetYaw": -49.3,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    }
+   ],
+   "northOffset": 319.7,
+   "multiRes": {
+    "path": "/%l/%s%y_%x",
+    "extension": "jpg",
+    "tileResolution": 512,
+    "maxLevel": 5,
+    "cubeResolution": 5208,
+    "basePath": "multires/west-side-07"
+   }
+  },
+  "west-side-08": {
+   "title": "West Side 08",
+   "panorama": "panos/west-side-08.jpg",
+   "hotSpots": [
+    {
+     "type": "scene",
+     "sceneId": "sr-16",
+     "text": "SR 16",
+     "yaw": 91.2,
+     "pitch": -15.5,
+     "targetYaw": -119.4,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "sr-17",
+     "text": "SR 17",
+     "yaw": 57.7,
+     "pitch": -23.5,
+     "targetYaw": -118.4,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    },
+    {
+     "type": "scene",
+     "sceneId": "west-side-06",
+     "text": "West Side 06",
+     "yaw": 1.2,
+     "pitch": -16.8,
+     "targetYaw": 132.1,
+     "targetPitch": -10,
+     "cssClass": "spot"
+    }
+   ],
+   "northOffset": 350.2,
+   "multiRes": {
+    "path": "/%l/%s%y_%x",
+    "extension": "jpg",
+    "tileResolution": 512,
+    "maxLevel": 5,
+    "cubeResolution": 5208,
+    "basePath": "multires/west-side-08"
+   }
+  }
+ }
+}

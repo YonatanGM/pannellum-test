@@ -1,0 +1,12 @@
+{
+    "hfov": 100.0,
+    "type": "multires",
+    "multiRes": {
+        "missingTiles": "!d>422>53435364346535663646566",
+        "path": "/%l/%s%y_%x",
+        "extension": "jpg",
+        "tileResolution": 512,
+        "maxLevel": 5,
+        "cubeResolution": 5208
+    }
+}
